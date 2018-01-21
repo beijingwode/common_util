@@ -29,10 +29,12 @@ public class PageRequestFactory {
         System.out.println("PageRequestFactory.MAX_PAGE_SIZE="+MAX_PAGE_SIZE);
     }
 
-    public static PageRequest bindPageRequest(PageRequest pageRequest,HttpServletRequest request){
+    @SuppressWarnings("rawtypes")
+	public static PageRequest bindPageRequest(PageRequest pageRequest,HttpServletRequest request){
         return bindPageRequest(pageRequest, request, null);
     }
-    
+
+    @SuppressWarnings("rawtypes")
     public static PageRequest bindPageRequest(PageRequest pageRequest,HttpServletRequest request,String defaultSortColumns){
         return bindPageRequest(pageRequest, request, defaultSortColumns, BaseQuery.DEFAULT_PAGE_SIZE);
     }
@@ -40,6 +42,7 @@ public class PageRequestFactory {
     /**
      * 绑定PageRequest的属性值
      */
+    @SuppressWarnings("rawtypes")
     public static PageRequest bindPageRequest(PageRequest pageRequest, HttpServletRequest request,String defaultSortColumns, int defaultPageSize) {
 	    	try {
 	    		Map params = WebUtils.getParametersStartingWith(request, "");
