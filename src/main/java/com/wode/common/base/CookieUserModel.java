@@ -7,6 +7,10 @@ import java.util.Date;
 import com.wode.common.util.StringUtils;
 
 public class CookieUserModel implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1564983133699466550L;
 	private Long UserID;
 	private long UserGroup;
 	private String password;
